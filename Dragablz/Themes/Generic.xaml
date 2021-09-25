@@ -550,7 +550,7 @@
                                         x:Name="PART_WindowRestoreThumb"
                                         IsHitTestVisible="False"
                                         Style="{StaticResource InvisibleThumbStyle}" />
-                                    <StackPanel
+                                    <!--<StackPanel
                                         x:Name="SystemCommandsPanel"
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Top"
@@ -580,8 +580,8 @@
                                             Style="{StaticResource CloseMenuCommandButtonStyle}">
                                             <themes:SystemCommandIcon SystemCommandType="CloseWindow" />
                                         </Button>
-                                    </StackPanel>
-                                    <ContentPresenter Margin="4" />
+                                    </StackPanel>-->
+                                    <ContentPresenter />
                                 </Grid>
                             </AdornerDecorator>
                         </Border>
@@ -591,16 +591,16 @@
                         <Trigger Property="WindowState" Value="Maximized">
                             <Setter TargetName="PART_WindowRestoreThumb" Property="IsHitTestVisible" Value="True" />
                         </Trigger>
-                        <Trigger Property="IsBeingDraggedByTab" Value="True">
+                        <!--<Trigger Property="IsBeingDraggedByTab" Value="True">
                             <Setter TargetName="SystemCommandsPanel" Property="Visibility" Value="Collapsed" />
-                        </Trigger>
-                        <Trigger Property="IsActive" Value="True">
+                        </Trigger>-->
+                        <!--<Trigger Property="IsActive" Value="True">
                             <Setter TargetName="CloseWindowCommandButton" Property="Background">
                                 <Setter.Value>
                                     <SolidColorBrush Color="{StaticResource CloseCommandHighlightColor}" />
                                 </Setter.Value>
                             </Setter>
-                        </Trigger>
+                        </Trigger>-->
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -1386,7 +1386,7 @@
         <Setter Property="Background" Value="{StaticResource TabItem.Static.Background}" />
         <Setter Property="BorderBrush" Value="{StaticResource TabItem.Static.Border}" />
         <Setter Property="Margin" Value="0" />
-        <Setter Property="Padding" Value="6,2,6,2" />
+        <Setter Property="Padding" Value="0" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="Template">
@@ -1598,7 +1598,7 @@
         <Setter Property="Background" Value="{StaticResource TabItem.Static.Background}" />
         <Setter Property="BorderBrush" Value="{StaticResource TabItem.Static.Border}" />
         <Setter Property="Margin" Value="0" />
-        <Setter Property="Padding" Value="6,2,6,2" />
+        <Setter Property="Padding" Value="0" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="Template">
@@ -1836,12 +1836,12 @@
     </Style>
 
     <Style TargetType="{x:Type local:TabablzControl}">
-        <Setter Property="Padding" Value="2" />
+        <Setter Property="Padding" Value="0" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Background" Value="{StaticResource TabItem.Selected.Background}" />
         <Setter Property="BorderBrush" Value="{StaticResource TabItem.Selected.Border}" />
-        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
         <Setter Property="ItemContainerStyle" Value="{StaticResource StandardDragablzTabItemStyle}" />
         <Setter Property="Template">
@@ -2008,7 +2008,8 @@
                                 <Border
                                     x:Name="contentPanel"
                                     Grid.Column="1"
-                                    Margin="-1,0,0,0"
+                                    Margin="0"
+                                    Padding="0"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
