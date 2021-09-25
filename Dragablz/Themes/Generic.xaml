@@ -2039,6 +2039,8 @@
                                     <local:DragablzItemsControl
                                         x:Name="PART_HeaderItemsControl"
                                         Grid.Row="1"
+                                        HorizontalAlignment="Center"
+                                        HorizontalContentAlignment="Center"
                                         Panel.ZIndex="1"
                                         FixedItemCount="{TemplateBinding FixedHeaderCount}"
                                         ItemContainerStyle="{TemplateBinding ItemContainerStyle}"
