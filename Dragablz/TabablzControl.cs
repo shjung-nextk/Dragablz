@@ -1528,7 +1528,14 @@ namespace Dragablz
                 throw new InvalidOperationException("NewItemFactory must be provided.");
 
             var newItem = NewItemFactory(e.Parameter);
-            if (newItem == null) throw new ApplicationException("NewItemFactory returned null.");
+            if (newItem == null)
+            {
+                //throw new ApplicationException("NewItemFactory returned null.");
+                // ignore
+                // 추가 하지 않는다.
+                return;
+            }
+
 
             AddToSource(newItem);
             SelectedItem = newItem;
