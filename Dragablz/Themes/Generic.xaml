@@ -485,12 +485,12 @@
     </Style>
 
     <Style x:Key="HideDisabledButtonStyle" TargetType="{x:Type Button}">
-        <Setter Property="Visibility" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(dockablz:Layout.IsFloatingInLayout), Converter={StaticResource BooleanToVisibilityConverter}}" />
+        <!--<Setter Property="Visibility" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(dockablz:Layout.IsFloatingInLayout), Converter={StaticResource BooleanToVisibilityConverter}}" />
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Visibility" Value="Collapsed" />
             </Trigger>
-        </Style.Triggers>
+        </Style.Triggers>-->
     </Style>
 
     <ControlTemplate x:Key="WindowTemplateKey" TargetType="{x:Type local:DragablzWindow}">
