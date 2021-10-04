@@ -2176,7 +2176,8 @@
                                 ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}"
                                 ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" />
                             <ContentPresenter x:Name="PART_FloatContentPresenter" Margin="{TemplateBinding FloatingItemsContainerMargin}" />
-                            <dockablz:DropZone
+
+                            <!--<dockablz:DropZone
                                 x:Name="PART_TopDropZone"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Top"
@@ -2215,7 +2216,7 @@
                                         <Binding Path="IsFloatDropZoneEnabled" RelativeSource="{RelativeSource TemplatedParent}" />
                                     </MultiBinding>
                                 </dockablz:DropZone.Visibility>
-                            </dockablz:DropZone>
+                            </dockablz:DropZone>-->
                         </Grid>
                     </Border>
                 </ControlTemplate>
