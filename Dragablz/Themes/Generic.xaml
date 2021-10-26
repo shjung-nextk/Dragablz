@@ -1156,14 +1156,16 @@
     <Style x:Key="FloatingDragablzItemStyle" TargetType="{x:Type local:DragablzItem}">
         <Style.Setters>
             <Setter Property="BorderBrush" Value="{StaticResource TabItem.Static.Border}" />
-            <Setter Property="BorderThickness" Value="4" />
+            <Setter Property="Margin" Value="1" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="0" />
             <Setter Property="Canvas.Left" Value="{Binding X, RelativeSource={RelativeSource Self}}" />
             <Setter Property="Canvas.Top" Value="{Binding Y, RelativeSource={RelativeSource Self}}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type local:DragablzItem}">
                         <Grid Margin="{TemplateBinding Margin}">
-                            <Border Background="White">
+                            <!--<Border Background="White">
                                 <Border.Effect>
                                     <DropShadowEffect
                                         BlurRadius="10"
@@ -1172,7 +1174,7 @@
                                         ShadowDepth="5"
                                         Color="Black" />
                                 </Border.Effect>
-                            </Border>
+                            </Border>-->
                             <Border
                                 Padding="{TemplateBinding Control.Padding}"
                                 Background="{TemplateBinding Panel.Background}"
@@ -1187,12 +1189,13 @@
                                         Content="{TemplateBinding ContentControl.Content}"
                                         ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}"
                                         ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
+                                        Cursor="Arrow"
                                         SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
-                                    <Thumb
+                                    <!--<Thumb
                                         x:Name="PART_Thumb"
                                         HorizontalAlignment="Stretch"
                                         VerticalContentAlignment="Stretch"
-                                        Style="{StaticResource InvisibleThumbStyle}" />
+                                        Style="{StaticResource InvisibleThumbStyle}" />-->
                                 </Grid>
                             </Border>
                             <Thumb
@@ -2157,7 +2160,7 @@
 
     <Style TargetType="dockablz:Layout">
         <Setter Property="FloatingItemsControlStyle" Value="{StaticResource FloatingDragablzItemsControlStyle}" />
-        <!--  Setter Property="FloatingItemContainerStyle" Value="{StaticResource FloatingDragablzItemStyle}" /  -->
+        <Setter Property="FloatingItemContainerStyle" Value="{StaticResource FloatingDragablzItemStyle}" />
         <Setter Property="FloatingItemContainerStyleSelector">
             <Setter.Value>
                 <dockablz:CouldBeHeaderedStyleSelector HeaderedStyle="{StaticResource ToolDragablzItemStyle}" NonHeaderedStyle="{StaticResource FloatingDragablzItemStyle}" />
