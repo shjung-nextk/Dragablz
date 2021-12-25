@@ -12,6 +12,10 @@ namespace Dragablz
         private object _header;
         private object _content;
 
+        public delegate void SelectedHeaderChange(bool isSelected);
+        public event SelectedHeaderChange OnSelectedHeaderChange;
+
+
         public HeaderedItemViewModel()
         {
         }
@@ -60,6 +64,7 @@ namespace Dragablz
             {
                 if (_isSelected == value) return;
                 _isSelected = value;
+                OnSelectedHeaderChange?.Invoke(_isSelected);
 #if NET40
                 OnPropertyChanged("IsSelected");
 #else

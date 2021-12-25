@@ -1409,6 +1409,11 @@ namespace Dragablz
                 var isSelected = (child.Content == selectedContent);
                 child.Visibility = isSelected ? Visibility.Visible : Visibility.Collapsed;
                 child.IsEnabled = isSelected;
+
+                if (child.Content is HeaderedItemViewModel vm)
+                {
+                    vm.IsSelected = isSelected;
+                }
             }
         }
 
